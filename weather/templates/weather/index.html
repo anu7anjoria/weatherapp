@@ -7,10 +7,26 @@
     </head>
 
     <body>
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="field has-addons">
+                        <div class="control is-expanded">
+                            {{ form.name }}
+                        </div>
+                        <div class="control">
+                            <button class="button is-info">
+                                Search
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <a href="/history">History</a><a href="/delete">  Clear</a><br>              
                 <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Image">
-                <h1>{{ weather.temperature }}</h1> 
-                <h6>{{ weather.description}}</h6>
-                <h6>{{ weather.city}},{{weather.country}}</h6>
-                
+                    <h1>{{ weather.temperature }}&#8451;</h1> 
+                    <h6>{{ weather.description}}</h6>
+                    <h6>{{ weather.city}},{{weather.country}}</h6>
+
     </body>
+
 </html>
+    

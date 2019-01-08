@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Weather</title>
+        {% load staticfiles %}
+        <link rel='stylesheet' href="{% static 'css/bootstrap.min.css' %}" type='text/css'>
+    </head>
+
+    <body> 
+                <a href="/history">History</a><a href="/delete">Clear</a><br>              
+                {% for weather in weather_data %}
+                    <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Image">
+                    <h1>{{ weather.temperature }}&#8451;</h1> 
+                    <h6>{{ weather.description}}</h6>
+                    <h6>{{ weather.city}},{{weather.country}}</h6>
+                {% endfor %}
+
+
+    </body>
+
+</html>
+    
