@@ -4,7 +4,8 @@ import requests
 from .models import City
 from .form import CityForm
 def history(request):
-    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=8cd5cfb744611240e0c17b0b7d872b23'
+    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=a2e94f201ed18a4afcde08f6dfa61eb8'
+    
     cities = City.objects.all()
     form = CityForm()
     weather_data = []
@@ -28,7 +29,7 @@ def history(request):
 def delete(self):
     City.objects.all().delete()
 def index(request):
-    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=8cd5cfb744611240e0c17b0b7d872b23' ''
+    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=a2e94f201ed18a4afcde08f6dfa61eb8' ''
     if request.method == 'POST': # only true if form is submitted
         form = CityForm(request.POST) # add actual request data to form for processing
         form.save()
